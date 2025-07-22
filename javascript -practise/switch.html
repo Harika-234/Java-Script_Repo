@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+const falsyValues = ["false", 0, "", null, undefined, NaN];
+const truthyValues = ["true", 1, "hello", "0", -1];
+
+while (true) {
+  let input = prompt(
+    "Enter one of the following values:\n" +
+    `"false", 0, "", null, undefined, NaN, "true", 1, "hello", "0", -1\n` +
+    "Type 'exit' to quit."
+  );
+
+  if (input === null || input.toLowerCase() === "exit") break;
+
+  let value;
+ 
+  switch (input) {
+    case "false": value = "false"; break;
+    case "true": value = "true"; break;
+    case "null": value = null; break;
+    case "undefined": value = undefined; break;
+    case "NaN": value = NaN; break;
+    case "": value = ""; break;
+    case "0": value = 0; break;
+    case "1": value = 1; break;
+    case "-1": value = -1; break;
+    case "hello": value = "hello"; break;
+    case "\"0\"": value = "0"; break;
+    default:
+      alert(" Invalid input. Use values from the list."); 
+      continue;
+  }
+
+  let result = !!value ? "Truthy " : "Falsy ";
+  alert(`You entered: ${input}\nJS evaluates it as: ${result}`);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+while (true) {
+  let input = prompt("Enter a JS value (e.g. 0, '0','hello', [], {}, true, null).\nType 'exit' to quit:");
+  if (input === null || input.toLowerCase() === "exit") break;
+
+  let value;
+  try {
+    value = eval(input);
+  } catch {
+    alert("Invalid input"); continue;
+  }
+
+  alert(`${input} is ${!!value ? "Truthy " : "Falsy "}`);
+}
+</script>
+</body>
+</html>

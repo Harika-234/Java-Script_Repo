@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Truthy vs Falsy Game</title>
+</head>
+<body>
+
+<script>
+  
+  const values = [true, 1, "0", "hi", [], {}, -1, false, 0, " ", null, undefined, NaN];
+
+  while (true) {
+   
+    let input = prompt("Enter a JavaScript value ");
+
+
+    if (input === null || input.toLowerCase() === "exit") {
+      alert("Game ended. Thanks for playing!");
+      break;
+    }
+
+    let userValue;
+    let computerValue = values[Math.floor(Math.random() * values.length)];
+
+
+    try {
+      userValue = eval(input);
+    } catch {
+      alert("Invalid input. Please try again.");
+      continue;
+    }
+
+  
+    let userTruthy = !!userValue;
+    let compTruthy = !!computerValue;
+
+   
+    let result;
+    if (userTruthy === compTruthy) {
+      result = " It's a Tie!";
+    } else if (userTruthy && !compTruthy) {
+      result = " You Win!";
+    } else {
+      result = " You Lose!";
+    }
+    if (!confirm("Do you want to check another value?")) {
+                alert("Thank you for using the truthy/falsy checker!");
+                break;
+            }
+
+    
+    alert(
+      "🧍 You: " + input + " (" + (userTruthy ? "Truthy" : "Falsy") + ")\n" +
+      "💻 Computer: " + computerValue + " (" + (compTruthy ? "Truthy" : "Falsy") + ")\n\n" +
+      result
+    );
+     
+  }
+</script>
+
+</body>
+</html>
+
+

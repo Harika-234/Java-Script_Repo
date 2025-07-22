@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Check</title>
+</head>
+<body>
+    <h1>Check if You Are an Adult</h1>
+
+    <label for="age">Enter your age:</label>
+    <input type="number" id="age" placeholder="Enter your age">
+    <button onclick="checkAge()">Check</button>
+
+    <script>
+        function checkAge() {
+            const age = Number(document.getElementById("age").value);
+
+            if (age > 18) {
+                alert("You are an Adult.");
+            } else if (age < 18) {
+                alert("You are a Minor.");
+            } else if (age === 18) {
+                alert("You are exactly 18 years old.");
+            } else {
+                alert("Please enter a valid age.");
+            }
+        }
+    </script>
+
+<hr>
+
+
+   
+        <h1>printl 1 to 10:</h1>
+        <button onclick="loop()">For loop button</button>
+        <script>
+            function loop(){
+                for (let i=1;i<=10;i++){
+                    console.log(i);
+                }
+            }
+        </script>
+  
+    
+
+
+<hr>
+
+<body>
+   
+     <h3>Console for output</h3>
+  <script>
+    
+    const pi = 3.14;
+    console.log("Value of const pi:", pi);
+
+
+    let age = 25;
+    age = 26;
+    console.log("Updated value of let age:", age);
+
+   
+    var name = "John";
+    name = "Doe";
+    console.log("Updated value of var name:", name);
+  </script>
+
+<hr>
+ 
+<body>
+
+    <h2 id="title">Original Title</h2>
+    <p class="info">This is paragraph 1</p>
+    <p class="info">This is paragraph 2</p>
+    <button onclick="changeText()">Click Me</button>
+
+    <script>
+        function changeText() {
+            
+            const heading = document.getElementById("title");
+            heading.innerText = "Title Changed using getElementById";
+
+            
+            const paras = document.getElementsByClassName("info");
+            paras[0].innerText = "Paragraph 1 changed using getElementsByClassName";
+            paras[1].innerText = "Paragraph 2 changed too!";
+        }
+    </script>
+    <hr>
+
+    <body>
+
+    <h2 class="title">Title 1</h2>
+    <h2 class="title">Title 2</h2>
+    <h2 class="title">Title 3</h2>
+
+    <button onclick="changeText()">Click Me</button>
+
+    <script>
+        function changeText() {
+           
+            const firstTitle = document.querySelector(".title");
+            firstTitle.innerText = "First Title Changed";
+
+           
+            const allTitles = document.querySelectorAll(".title");
+            for (let i = 0; i < allTitles.length; i++) {
+              allTitles[i].style.color = "blue";
+              allTitles[i].innerText += " (Title " + (i + 1) + ")";
+}
+
+        }
+    </script>
+    <hr>
+    <style>
+         .highlight {
+      background-color: yellow;
+      padding: 10px;
+    }
+    </style>
+    <h2 id="myText">Hello! java Script</h2>
+    <button onclick="addClass()">Add</button>
+  <button onclick="removeClass()">Remove</button>
+  <button onclick="toggleClass()">Toggle</button>
+  <button onclick="checkClass()">Check</button>
+  
+   <p id="checkResult"></p>
+    <script>
+    const element = document.getElementById("myText");
+
+    function addClass() {
+      element.classList.add("highlight");
+    }
+
+    function removeClass() {
+      element.classList.remove("highlight");
+    }
+
+    function toggleClass() {
+      element.classList.toggle("highlight");
+    }
+
+    function checkClass() {
+      const result = element.classList.contains("highlight");
+      document.getElementById("checkResult").innerText =
+        result ? "Class 'highlight' is present."
+         : "Class 'highlight' is not present.";
+    }
+  </script>
+  <hr>
+  <h2>Game</h2>
+  <script>
+       
+    console.log(" Falsy Values");
+
+    let val1 = false;
+    if (val1) {
+      console.log("false is Truthy");
+    } else {
+      console.log("false is Falsy");
+    }
+
+    let val2 = 0;
+    if (val2) {
+      console.log("0 is Truthy ");
+    } else {
+      console.log("0 is Falsy ");
+    }
+
+    let val3 = "";
+    if (val3) {
+      console.log("'' is Truthy ");
+    } else {
+      console.log("'' is Falsy ");
+    }
+
+    let val4 = null;
+    if (val4) {
+      console.log("null is Truthy ");
+    } else {
+      console.log("null is Falsy ");
+    }
+
+    let val5 = undefined;
+    if (val5) {
+      console.log("undefined is Truthy ");
+    } else {
+      console.log("undefined is Falsy ");
+    }
+
+    let val6 = NaN;
+    if (val6) {
+      console.log("NaN is Truthy ");
+    } else {
+      console.log("NaN is Falsy ");
+    }
+
+    console.log(" Truthy Values ");
+
+    let val7 = true;
+    if (val7) {
+      console.log("true is Truthy ");
+    } else {
+      console.log("true is Falsy ");
+    }
+
+    let val8 = 1;
+    if (val8) {
+      console.log("1 is Truthy ");
+    } else {
+      console.log("1 is Falsy ");
+    }
+
+    let val9 = "hello";
+    if (val9) {
+      console.log("'hello' is Truthy ");
+    } else {
+      console.log("'hello' is Falsy ");
+    }
+
+    let val10 = [];
+    if (val10) {
+      console.log("[] is Truthy ");
+    } else {
+      console.log("[] is Falsy ");
+    }
+
+    let val11 = {};
+    if (val11) {
+      console.log("{} is Truthy ");
+    } else {
+      console.log("{} is Falsy ");
+    }
+
+    let val12 = "0";
+    if (val12) {
+      console.log("'0' is Truthy ");
+    } else {
+      console.log("'0' is Falsy ");
+    }
+
+    let val13 = -1;
+    if (val13) {
+      console.log("-1 is Truthy ");
+    } else {
+      console.log("-1 is Falsy ");
+    }
+  </script>
+<hr>
+
+   <h2>Staments game</h2>
+
+<script>
+  const TruthValues=["True",1,"Hello",[],{},"0",-1];
+  const FalseValues=["False",0,"",null,undefined,NaN];
+  const allValues=["TruthValues","FalseValues"];
+
+  let userScore=0;
+  let computerScore=0;
+
+  function playGame() {
+    const userChoice = prompt("Enter 'True' or 'False':").trim().toLowerCase();
+    const computerChoice = Math.random() < 0.5 ? "true" : "false";
+
+    if (userChoice === computerChoice) {
+      userScore++;
+      alert(`You guessed ${userChoice} and the computer chose ${computerChoice}. You win this round!`);
+    } else {
+      computerScore++;
+      alert(`You guessed ${userChoice} but the computer chose ${computerChoice}. You lose this round.`);
+    }
+
+    alert(`Current Score - You: ${userScore}, Computer: ${computerScore}`);
+  }
+
+
+  </script>
+
+
+
+    
+</body>
+</html>
+
